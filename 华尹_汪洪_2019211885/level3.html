@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Student(name) {
+
+            function People(name) {
+                setTimeout(function () {
+                    console.log("Hi! This is " + name + "!");
+                }, 0);
+                return this;
+            }
+
+            People.prototype.sleep = function (time) {
+                setTimeout(function () {
+                    let d = new Date();
+                    let time123 = d.getTime();
+                    for (let i = 0; ; i++) {
+                        let d = new Date();
+                        if (d.getTime() - time123 > time*1000) {
+                            break;
+                        }
+                    }
+                    console.log("Wake up after " + time + "");
+                }, 0);
+
+                return this;
+
+            }
+
+            People.prototype.sleepFirst = function (time) {
+                let d = new Date();
+                let time123 = d.getTime();
+                for (let i = 0; ; i++) {
+                    let d = new Date();
+                    if (d.getTime() - time123 > time*1000) {
+                        break;
+                    }
+                }
+                console.log("Wake up after " + time + "");
+                return this;
+
+            }
+            People.prototype.study = function (course) {
+                setTimeout(function () {
+                    console.log("Study " + course + "~");
+                }, 0);
+                return this;
+
+
+            }
+
+            return new People(name);
+        }
+
+        Student('fxy');
+        // Student('fxy').sleep(3).study('javascript');
+        // Student('fxy').study('javascript').study('Vue');
+        // Student('fxy').sleepFirst(5).study('Ajax');
+    </script>
+</body>
+
+</html>
